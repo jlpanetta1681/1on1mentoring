@@ -1,0 +1,209 @@
+'use client'
+
+import React, { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/fbaseConfig';
+
+
+const SignupForm = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subjects, setSubjects] = useState('');
+  const [gradeLevel, setGradeLevel] = useState('');
+  const [schedule, setSchedule] = useState('');
+  const [address, setAddress] = useState('');
+  const [onlineTutoring, setOnlineTutoring] = useState(false);
+  const [learningGoals, setLearningGoals] = useState('');
+  const [previousExperience, setPreviousExperience] = useState('');
+  const [agreedToPrivacyPolicy, setAgreedToPrivacyPolicy] = useState(false);
+  const [agreedToTermsOfService, setAgreedToTermsOfService] = useState(false);
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      // Create a new user with the provided email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      // Access the user information from the userCredential object
+      const user = userCredential.user;
+      console.log('User registered:', user);
+
+      // Reset form fields
+      setFullName('');
+      setEmail('');
+      setPhone('');
+      setSubjects('');
+      setGradeLevel('');
+      setSchedule('');
+      setAddress('');
+      setOnlineTutoring(false);
+      setLearningGoals('');
+      setPreviousExperience('');
+      setAgreedToPrivacyPolicy(false);
+      setAgreedToTermsOfService(false);
+      setPassword('');
+    } catch (error) {
+      // Handle the error
+      console.log('Error registering user:', error);
+    }
+
+    console.log('Form submitted:', {
+      fullName,
+      email,
+      phone,
+      subjects,
+      gradeLevel,
+      schedule,
+      address,
+      onlineTutoring,
+      learningGoals,
+      previousExperience,
+      agreedToPrivacyPolicy,
+      agreedToTermsOfService,
+    });
+  };
+
+  return (
+    <form className="max-w-md mx-auto mt-8" onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label htmlFor="fullName" className="block text-gray-700 font-bold mb-2">
+          Full Name
+        </label>
+        <input
+          type="text"
+          id="fullName"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder="Your Full Name"
+          required
+        />
+        </div>
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder="Your Email"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
+          Phone Number
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder="Your Phone Number"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="subjects">Subjects/Topics</label>
+        <input
+          type="text"
+          id="subjects"
+          value={subjects}
+          onChange={(e) => setSubjects(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder='Subjects of Interest'
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="gradeLevel">Grade Level</label>
+        <input
+          type="text"
+          id="gradeLevel"
+          value={gradeLevel}
+          onChange={(e) => setGradeLevel(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder='Last Grade Completed'
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="schedule">Preferred Schedule</label>
+        <input
+          type="text"
+          id="schedule"
+          value={schedule}
+          onChange={(e) => setSchedule(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder='If you have any preferred days/times'
+        />
+      </div>
+      <div>
+        <label htmlFor="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="learningGoals">Learning Goals</label>
+        <textarea
+          id="learningGoals"
+          value={learningGoals}
+          onChange={(e) => setLearningGoals(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+        />
+      </div>
+      <div>
+        <label htmlFor="previousExperience">Previous Tutoring Experience</label>
+        <textarea
+          id="previousExperience"
+          value={previousExperience}
+          onChange={(e) => setPreviousExperience(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+        />
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={agreedToPrivacyPolicy}
+            onChange={(e) => setAgreedToPrivacyPolicy(e.target.checked)}
+            required
+          />
+          I agree to the Privacy Policy
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={agreedToTermsOfService}
+            onChange={(e) => setAgreedToTermsOfService(e.target.checked)}
+            required
+          />
+          I agree to the Terms of Service
+        </label>
+      </div>
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Sign Up
+      </button>
+    </form>
+  )
+  
+};
+
+export default SignupForm;
