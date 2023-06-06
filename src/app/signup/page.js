@@ -23,10 +23,7 @@ const SignupForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Create a new user with the provided email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-      // Access the user information from the userCredential object
       const user = userCredential.user;
       console.log('User registered:', user);
 
@@ -34,6 +31,7 @@ const SignupForm = () => {
       setFullName('');
       setEmail('');
       setPhone('');
+      setPassword('')
       setSubjects('');
       setGradeLevel('');
       setSchedule('');
@@ -53,6 +51,7 @@ const SignupForm = () => {
       fullName,
       email,
       phone,
+      password,
       subjects,
       gradeLevel,
       schedule,
@@ -78,6 +77,7 @@ const SignupForm = () => {
           onChange={(e) => setFullName(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded"
           placeholder="Your Full Name"
+          autocomplete="off"
           required
         />
         </div>
@@ -92,6 +92,7 @@ const SignupForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded"
           placeholder="Your Email"
+          autocomplete="off"
           required
         />
       </div>
@@ -106,9 +107,25 @@ const SignupForm = () => {
           onChange={(e) => setPhone(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded"
           placeholder="Your Phone Number"
+          autocomplete="off"
           required
         />
       </div>
+      <div>
+      <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
+          password
+          </label>
+       <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded"
+          placeholder="create a password"
+          required
+        />
+      </div>
+     
       <div>
         <label htmlFor="subjects">Subjects/Topics</label>
         <input
@@ -176,6 +193,7 @@ const SignupForm = () => {
       <div>
         <label>
           <input
+          id='privacyPolicy'
             type="checkbox"
             checked={agreedToPrivacyPolicy}
             onChange={(e) => setAgreedToPrivacyPolicy(e.target.checked)}
@@ -187,6 +205,7 @@ const SignupForm = () => {
       <div>
         <label>
           <input
+          id='terms'
             type="checkbox"
             checked={agreedToTermsOfService}
             onChange={(e) => setAgreedToTermsOfService(e.target.checked)}
