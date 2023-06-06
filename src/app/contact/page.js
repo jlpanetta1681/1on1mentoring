@@ -1,6 +1,5 @@
 'use client'
 
-// Update the path to the sendEmail.js file
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'; // Update the import statement
 import SuccessPage from '../success/page';
@@ -26,7 +25,7 @@ const Contact = () => {
         },
       });
       console.log(response.status)
-  
+
       if (response.status === 201) {
         console.log('Email sent successfully');
         // Redirect to  success page
@@ -43,9 +42,19 @@ const Contact = () => {
       }
     }
   }
-    
+
   return (
     <div className="text-center">
+    <style jsx>{`
+      .background-container {
+        background: linear-gradient(135deg, #f6f6f6 0%, #e6e6e6 100%);
+      }
+    `}</style>
+    <div
+    className="background-container py-16"
+   
+    
+    ></div>
       <h1 className="text-4xl font-bold mb-8">Contact</h1>
       <ul className="flex justify-center space-x-4 mb-8">
         <li>
@@ -64,18 +73,25 @@ const Contact = () => {
           </Link>
         </li>
         <li>
-          <Link href="/contact">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Contact</span>
+          <Link href="/signup">
+            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">SignUp</span>
           </Link>
         </li>
-        {/* Add other navigation links */}
+        <li>
+          <Link href="/signin">
+            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign In</span>
+          </Link>
+        </li>
+       
       </ul>
+     
 
-      <div className="max-w-lg mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-        <p className="text-lg text-gray-800 mb-8">
-          Have a question, feedback, or interested in our services? Fill out the form below and we will get back to you as soon as possible.
-        </p>
+        <div className="max-w-lg mx-auto ">
+          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-lg text-gray-800 mb-8">
+            Have a question, feedback, or interested in our services? Fill out the form below to send us a message or a question, and we will get back to you as soon as possible. For a free evaluation meeting to determine if what we have to offer is right for you, please click on Signup above and foll out the form and I will reach ot to you as soon as possible
+          </p>
+        </div>
         <form className="text-left" onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
@@ -108,16 +124,16 @@ const Contact = () => {
             ></textarea>
           </div>
           <button
-            type="submit" 
+            type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Submit
           </button>
         </form>
       </div>
-    </div>
-    );
-  };
+    
+  );
+};
 
-  
+
 export default Contact;

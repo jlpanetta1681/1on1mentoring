@@ -1,17 +1,19 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import { getApp, getApps, initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: AIzaSyAgzxBS3IPmO8DhFvG7htW2Hxw4_fmvB20,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-}
-
+    apiKey: "AIzaSyBLnE1zXvchJK3qmmG25BD9Ypr6MhYleek",
+    authDomain: "pathfinders-33f9c.firebaseapp.com",
+    projectId: "pathfinders-33f9c",
+    storageBucket: "pathfinders-33f9c.appspot.com",
+    messagingSenderId: "974121287821",
+    appId: "1:974121287821:web:4e9439ff058dd6378f22c4",
+    measurementId: "G-R1PSBXD7H7"
+  };
 // Initialize Firebase for SSR
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
 

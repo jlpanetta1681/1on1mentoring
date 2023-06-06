@@ -23,7 +23,7 @@ const Paths = () => {
         </li>
         <li>
           <Link href="/signup">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign-Up/Register</span>
+            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign-Up</span>
           </Link>
         </li>
         <li>
