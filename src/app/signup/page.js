@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/fbaseConfig';
-
+import NavBar from '../components/NavBar';
 
 const SignupForm = () => {
   const [fullName, setFullName] = useState('');
@@ -65,6 +65,8 @@ const SignupForm = () => {
   };
 
   return (
+    <>
+    <NavBar /> 
     <form className="max-w-md mx-auto mt-8" onSubmit={handleSubmit}>
       <div className="mb-4">
         <label htmlFor="fullName" className="block text-gray-700 font-bold mb-2">
@@ -221,6 +223,7 @@ const SignupForm = () => {
         Sign Up
       </button>
     </form>
+    </>
   )
   
 };

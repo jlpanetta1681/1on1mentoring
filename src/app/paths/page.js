@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link';
 
 const Paths = () => {
@@ -40,13 +42,13 @@ const Paths = () => {
           <div className="p-4 bg-white rounded shadow">
             <h3 className="text-2xl font-bold mb-2">Mentorship Program</h3>
             <p className="text-gray-800">
-              Our Mentorship Program provides personalized one-on-one guidance and support to help you achieve your career goals. You'll have access to experienced mentors who will assist you in navigating the complexities of the tech industry and provide valuable insights to enhance your skills.
+              Our Mentorship Program provides personalized one-on-one guidance and support to help you achieve your career goals. You will have access to experienced mentors who will assist you in navigating the complexities of the tech industry and provide valuable insights to enhance your skills.
             </p>
           </div>
           <div className="p-4 bg-white rounded shadow">
             <h3 className="text-2xl font-bold mb-2">Tutoring Sessions</h3>
             <p className="text-gray-800">
-              Our Tutoring Sessions offer targeted assistance for specific topics or areas you want to improve. Whether it's mastering a programming language, preparing for technical interviews, or understanding complex concepts, our tutors are here to help you succeed.
+              Our Tutoring Sessions offer targeted assistance for specific topics or areas you want to improve. Whether mastering a programming language, preparing for technical interviews, or understanding complex concepts, our tutors are here to help you succeed.
             </p>
           </div>
         
@@ -59,16 +61,16 @@ const Paths = () => {
           <div className="p-4 bg-white rounded shadow">
             <h3 className="text-2xl font-bold mb-2">John Doe</h3>
             <p className="text-gray-800">
-              "Thanks to Pathfinder's mentorship, I landed my dream job at a top tech company. The guidance and support I received throughout the program were invaluable. I highly recommend their services!"
+              Thanks to  the Pathfinder mentorship, I landed my dream job at a top tech company. The guidance and support I received throughout the program were invaluable. I highly recommend their services!
             </p>
           </div>
           <div className="p-4 bg-white rounded shadow">
             <h3 className="text-2xl font-bold mb-2">Jane Smith</h3>
             <p className="text-gray-800">
-              "The tutoring sessions at Pathfinder helped me fill the gaps in my coding knowledge. The tutors were patient, knowledgeable, and provided me with the necessary tools to excel in my coding journey. I'm grateful for their help!"
+              `The tutoring sessions at Pathfinder helped me fill the gaps in my coding knowledge. The tutors were patient, knowledgeable, and provided me with the necessary tools to excel in my coding journey. I am grateful for their help!`
             </p>
           </div>
-          {/* Add more success stories */}
+          {/*  more success stories */}
         </div>
       </div>
     </div>
