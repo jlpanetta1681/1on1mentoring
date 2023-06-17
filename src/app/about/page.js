@@ -1,13 +1,16 @@
 'use client'
 
 import AboutSection from "../components/AboutSection";
-import Navbar from '../components/NavBar';
+import Navbar from "../components/NavBar";
 import Image from 'next/image'
 
 const About = () => {
   return (
     <div className="text-center">
-    <Navbar />
+  
+    <div className="text-center">
+      <Navbar />
+      
       <h1 className="text-4xl font-bold mb-8">
         A little Bit About Pathfinders.
       </h1>
@@ -26,7 +29,7 @@ const About = () => {
       
       
 
-      
+      </div>
       </div>  
       
   );

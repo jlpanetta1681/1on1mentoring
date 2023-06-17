@@ -1,11 +1,8 @@
-import Link from 'next/link';
 import NavBar from './components/NavBar';
 const HomePage = () => {
   return (
     <div className="text-center">
-      <h1 className="text-4xl font-bold mb-8">
-        Welcome to Pathfinder!
-      </h1>
+      
         <NavBar />  
       
       
