@@ -1,10 +1,13 @@
 import Navbar from '../components/NavBar'
+
+
 const Home = () => {
   return (
-    <div>
-
     <div className="text-center">
-      <Navbar /> 
+      
+      <h1 className="text-4xl font-bold mb-8">Homea</h1>
+      <Navbar />
+
       
 
       <div className="bg-cover bg-center py-16">

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div id='main-cont' className="bg-gray-100 py-4">
+    <div id='nav-bar' className="bg-gray-100 py-4">
       <div className="max-w-4xl mx-auto px-8 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-800">PathFinder</h1>
         <ul className="flex justify-center space-x-4">

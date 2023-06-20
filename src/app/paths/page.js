@@ -1,41 +1,15 @@
 'use client'
 
-import Link from 'next/link';
+import Navbar from '../components/NavBar';
+
 
 const Paths = () => {
   return (
     <div className="text-center">
-      <h1 className="text-4xl font-bold mb-8">Paths</h1>
-      <ul className="flex justify-center space-x-4 mb-8">
-        <li>
-          <Link href="/">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Home</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">About</span>
-          </Link>
-        </li>
-       
-        <li>
-          <Link href="/contact">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Contact</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signup">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign-Up</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signin">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign In</span>
-          </Link>
-        </li>
-        {/* Add other navigation links */}
-      </ul>
-
+      
+      
+      <Navbar />
+      
       <div className="max-w-4xl mx-auto mb-8">
         <h2 className="text-3xl font-bold mb-4">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

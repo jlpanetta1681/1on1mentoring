@@ -1,11 +1,8 @@
 'use client'
 
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import SuccessPage from '../success/page';
 import axios from 'axios';
 import Navbar from '../components/NavBar';
-
 
 const Contact = () => {
   const router = useRouter();
@@ -51,8 +48,7 @@ const Contact = () => {
 
   return (
     <div className="text-center">
-      <div className="background-container py-16"></div>
-      <h1 className="text-4xl font-bold mb-8">Contact</h1>
+   
       <Navbar />
 
       <div className="main-container">
