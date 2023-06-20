@@ -1,9 +1,8 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import SuccessPage from '../success/page';
 import axios from 'axios';
+import Navbar from '../components/NavBar';
 
 const Contact = () => {
   const router = useRouter();
@@ -49,82 +48,8 @@ const Contact = () => {
 
   return (
     <div className="text-center">
-       <style jsx>{`
-        .background-container {
-          background-image: url('/images/cntct-bckgrd.jpg');
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .main-container {
-          background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value as needed */
-          padding: 2rem;
-          border-radius: 0.5rem;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          max-width: 600px;
-        }
-        .form-field {
-          display: block;
-          width: 100%;
-          padding: 0.5rem;
-          margin-bottom: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 0.25rem;
-          box-sizing: border-box;
-          font-size: 1rem;
-        }
-        .form-submit {
-          display: block;
-          width: 100%;
-          padding: 0.75rem;
-          background-color: #4a90e2;
-          color: #fff;
-          font-weight: bold;
-          text-align: center;
-          border: none;
-          border-radius: 0.25rem;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
-        .form-submit:hover {
-          background-color: #2566c6;
-        }
-      `}</style>
-      
-      <div className="background-container py-16"></div>
-      <h1 className="text-4xl font-bold mb-8">Contact</h1>
-      <ul className="flex justify-center space-x-4 mb-8">
-        <li>
-          <Link href="/">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Home</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">About</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/paths">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Paths</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signup">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">SignUp</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signin">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign In</span>
-          </Link>
-        </li>
-      </ul>
+   
+      <Navbar />
 
       <div className="main-container">
         <div className="content-container">
@@ -144,7 +69,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="name"
-                className="w-full px-3 py-2 border border-gray-300 rounded"
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
                 required
               />
@@ -156,7 +81,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded"
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Email"
                 required
               />
@@ -167,15 +92,14 @@ const Contact = () => {
               </label>
               <textarea
                 id="message"
-                className="w-full px-3 py-2 border border-gray-300 rounded"
-                rows="4"
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"                rows="4"
                 placeholder="Your Message"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Submit
             </button>

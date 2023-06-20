@@ -3,9 +3,24 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/fbaseConfig';
+import NavBar from '../components/NavBar';
+import Quiz from '../components/Quiz';
+
+
+const questions = [
+  {
+    title: "Question 1",
+    choices: ["Choice 1", "Choice 2", "Choice 3"],
+  },
+  {
+    title: "Question 2",
+    choices: ["Choice A", "Choice B", "Choice C"],
+  },
+];
 
 
 const SignupForm = () => {
+  const [showQuiz, setShowQuiz] = useState(false);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -22,12 +37,13 @@ const SignupForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
     try {
+      
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log('User registered:', user);
 
-      // Reset form fields
       setFullName('');
       setEmail('');
       setPhone('');
@@ -42,8 +58,8 @@ const SignupForm = () => {
       setAgreedToPrivacyPolicy(false);
       setAgreedToTermsOfService(false);
       setPassword('');
+      setShowQuiz(true);
     } catch (error) {
-      // Handle the error
       console.log('Error registering user:', error);
     }
 
@@ -65,6 +81,8 @@ const SignupForm = () => {
   };
 
   return (
+    <>
+    <NavBar /> 
     <form className="max-w-md mx-auto mt-8" onSubmit={handleSubmit}>
       <div className="mb-4">
         <label htmlFor="fullName" className="block text-gray-700 font-bold mb-2">
@@ -221,6 +239,8 @@ const SignupForm = () => {
         Sign Up
       </button>
     </form>
+    {showQuiz && <Quiz questions={questions}/>}
+    </>
   )
   
 };
