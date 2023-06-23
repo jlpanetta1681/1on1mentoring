@@ -7,16 +7,16 @@ import NavBar from '../components/NavBar';
 import Quiz from '../components/Quiz';
 
 
-const questions = [
-  {
-    title: "Question 1",
-    choices: ["Choice 1", "Choice 2", "Choice 3"],
-  },
-  {
-    title: "Question 2",
-    choices: ["Choice A", "Choice B", "Choice C"],
-  },
-];
+// const questions = [
+//   {
+//     title: "Question 1",
+//     choices: ["Choice 1", "Choice 2", "Choice 3"],
+//   },
+//   {
+//     title: "Question 2",
+//     choices: ["Choice A", "Choice B", "Choice C"],
+//   },
+// ];
 
 
 const SignupForm = () => {

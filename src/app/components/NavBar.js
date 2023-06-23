@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/signin">
+            <Link href="/signIn">
               <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign In</span>
             </Link>
           </li>
