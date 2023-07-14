@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/fbaseConfig';
 import NavBar from '../components/NavBar';
-import Quiz from '../components/Quiz';
 
 
 // const questions = [
@@ -239,7 +238,7 @@ const SignupForm = () => {
         Sign Up
       </button>
     </form>
-    {showQuiz && <Quiz questions={questions}/>}
+    {/* {showQuiz && <Quiz questions={questions}/>} */}
     </>
   )
   
