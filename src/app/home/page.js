@@ -1,5 +1,5 @@
 import Navbar from '../components/NavBar'
-
+import Image from "next/image"
 
 const Home = () => {
   return (
@@ -7,8 +7,14 @@ const Home = () => {
       
       <h1 className="text-4xl font-bold mb-8">Home</h1>
       <Navbar />
+      <div className="flex flex-col items-center justify-center h-screen">
+  <h1 className="font-bold">About the Founder</h1>
+  <div className="my-4">
+    <Image src="/images/headshot.jpg" width={300} height={300} alt="headshot" className="mx-auto" />
+  
 
-      
+      </div>
+      </div>
 
       <div className="bg-cover bg-center py-16">
         <div className="bg-white bg-opacity-75 p-8 max-w-lg mx-auto">
