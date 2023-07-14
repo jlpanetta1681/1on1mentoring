@@ -1,47 +1,16 @@
-import Link from 'next/link';
+import Navbar from '../components/NavBar'
+
 
 const Home = () => {
   return (
-    <div>
-
     <div className="text-center">
-      <h1 className="text-4xl font-bold mb-8">
-        Welcome to Pathfinder!
-      </h1>
-      <ul className="flex justify-center space-x-4 mb-8">
-        <li>
-          <Link href="/about">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">About</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/paths">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Paths</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Contact</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signup">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign-Up</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/signin">
-            <span className="text-blue-500 hover:text-blue-700 cursor-pointer">Sign In</span>
-          </Link>
-        </li>
-      </ul>
+      
+      <h1 className="text-4xl font-bold mb-8">Homea</h1>
+      <Navbar />
 
-      <div
-        className="bg-cover bg-center py-16"
-        style={{
-          backgroundImage: "url('/images/desks.jpg')",
-        }}
-      >
+      
+
+      <div className="bg-cover bg-center py-16">
         <div className="bg-white bg-opacity-75 p-8 max-w-lg mx-auto">
           <h2 className="text-3xl font-bold mb-4">Experience Unmatched Personalized One-on-One Mentorship</h2>
           <p className="text-lg text-gray-800">
