@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/fbaseConfig';
 import NavBar from '../components/NavBar';
-import Quiz from '../components/Quiz';
+
 
 
 const questions = [
@@ -20,7 +20,6 @@ const questions = [
 
 
 const SignupForm = () => {
-  const [showQuiz, setShowQuiz] = useState(false);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -58,7 +57,7 @@ const SignupForm = () => {
       setAgreedToPrivacyPolicy(false);
       setAgreedToTermsOfService(false);
       setPassword('');
-      setShowQuiz(true);
+   
     } catch (error) {
       console.log('Error registering user:', error);
     }
@@ -239,7 +238,7 @@ const SignupForm = () => {
         Sign Up
       </button>
     </form>
-    {showQuiz && <Quiz questions={questions}/>}
+    
     </>
   )
   
