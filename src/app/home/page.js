@@ -1,24 +1,21 @@
-import Navbar from '../components/NavBar'
-import Image from "next/image"
+import Navbar from '../components/NavBar';
+import Image from "next/image";
 
 const Home = () => {
   return (
-    <div className="text-center">
-      
-      <h1 className="text-4xl font-bold mb-8">Home</h1>
+    <div>
+      <h1 className="text-2xl font-bold mb-8 text-center">Home</h1>
       <Navbar />
-      <div className="flex flex-col items-center justify-center h-screen">
-  <h1 className="font-bold">About the Founder</h1>
-  <div className="my-4">
-    <Image src="/images/headshot.jpg" width={300} height={300} alt="headshot" className="mx-auto" />
-  
-
-      </div>
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="font-bold">About the Founder</h1>
+        <div className="my-4">
+          <Image src="/images/headshot.jpg" layout="responsive" alt="headshot" className="" />
+        </div>
       </div>
 
-      <div className="bg-cover bg-center py-16">
-        <div className="bg-white bg-opacity-75 p-8 max-w-lg mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Experience Unmatched Personalized One-on-One Mentorship</h2>
+      <div className="bg-cover bg-center py-8">
+        <div className="bg-white bg-opacity-75 p-8 max-w-md mx-auto">
+          <h2 className="text-2xl font-bold mb-4">Experience Unmatched Personalized One-on-One Mentorship</h2>
           <p className="text-lg text-gray-800">
             Are you a graduate of an online coding boot camp or another non-traditional educational institution? Are you ready to take your skills to the next level and excel in the world of technology? Look no further! Our program is designed specifically for individuals like you who have taken alternative paths to acquire their knowledge and expertise.
             <br />
